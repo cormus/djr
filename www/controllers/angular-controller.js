@@ -1,5 +1,4 @@
-angularConfig.controller('TelaCtrl', function($rootScope, $location)
-{
+angularConfig.controller('HomeCtrl', function($rootScope, $location){
 	window.setTimeout(function(){
 
 		var gruposList		   = [];
@@ -17,17 +16,41 @@ angularConfig.controller('TelaCtrl', function($rootScope, $location)
 			}
 			db.transaction(queryDBGrupo, errorCB);
 		}
+	}, 1000);
+});
+	
+angularConfig.controller('CadastroFormularioCtrl', function($rootScope, $location){
+    //fecha o snap
+    appClass.snap.close();
+    //coloca uma classe se ativado no link do menu
+    $rootScope.activetab = $location.path();
 });
 
-angularConfig.controller('ContatoCtrl', function($rootScope, $location)
-{
+angularConfig.controller('HistoricoFormularioCtrl', function($rootScope, $location){
+    //fecha o snap
+    appClass.snap.close();
+    //coloca uma classe se ativado no link do menu
+    $rootScope.activetab = $location.path();
+});  
+	
+angularConfig.controller('HabitosFormularioCtrl', function($rootScope, $location){
+    //fecha o snap
+    appClass.snap.close();
+    //coloca uma classe se ativado no link do menu
+    $rootScope.activetab = $location.path();
+});  
+	
+angularConfig.controller('TratamentosFormularioCtrl', function($rootScope, $location){
     //fecha o snap
     appClass.snap.close();
     //coloca uma classe se ativado no link do menu
     $rootScope.activetab = $location.path();
 });  
 
-angularConfig.controller('HomeCtrl', function($rootScope, $location)
-{
-	$location.path('tela');    
+angularConfig.controller('TratamentosListaCtrl', function($rootScope, $location){
+	//$location.path('tela'); 
+	//fecha o snap
+    appClass.snap.close();
+    //coloca uma classe se ativado no link do menu
+    $rootScope.activetab = $location.path();
 }); 

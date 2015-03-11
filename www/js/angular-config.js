@@ -4,22 +4,30 @@ angularConfig.config(function($routeProvider, $locationProvider)
 {
    // remove o # da url
    //$locationProvider.html5Mode(true);
- 
-   $routeProvider
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/home', {
+	
+   $routeProvider.when('/', {
       templateUrl : 'views/home.html',
       controller     : 'HomeCtrl',
-   }) 
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/', {
-      templateUrl : 'views/tela.html',
-      controller     : 'TelaCtrl',
    })
-   // para a rota '/contato', carregaremos o template contato.html e o controller 'ContatoCtrl'
-   .when('/contato', {
-      templateUrl : 'views/contato.html',
-      controller  : 'ContatoCtrl',
+   .when('/cadastro_formulario', {
+      templateUrl : 'views/cadastro_formulario.html',
+      controller     : 'CadastroFormularioCtrl',
+   })
+   .when('/historico_formulario', {
+      templateUrl : 'views/historico_formulario.html',
+      controller     : 'HistoricoFormularioCtrl',
+   })
+   .when('/habitos_formulario', {
+      templateUrl : 'views/habitos_formulario.html',
+      controller  : 'HabitosFormularioCtrl',
+   })
+   .when('/historico_formulario', {
+      templateUrl : 'views/tratamentos_formulario.html',
+      controller  : 'TratamentosFormularioCtrl',
+   })
+   .when('/historico_formulario', {
+      templateUrl : 'views/tratamentos_lista.html',
+      controller  : 'TratamentosListaCtrl',
    })
    // caso não seja nenhum desses, redirecione para a rota '/'
    .otherwise ({ redirectTo: '/' });

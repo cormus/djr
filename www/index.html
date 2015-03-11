@@ -136,6 +136,13 @@
             background-color: #fafafa;
             font-size: 16px;
         }
+		
+		input:focus,
+		textarea:focus,
+		a:focus,
+		a {
+			outline: none;
+		}
     </style>
     <script type="text/javascript">
         var appClass;
@@ -148,25 +155,21 @@
             // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
         }
     </script>
-    <style type="text/css">
-        input:focus,
-        textarea:focus,
-        a:focus,
-        a {
-            outline: none;
-        }
-    </style>
 </head>
 
 <body onload="onLoad()">
     <div class="snap-drawers">
         <div class="snap-drawer snap-drawer-left">
             <div>
-                <h3>Framwork</h3>
+                <h3>Djr</h3>
                 <h4>Menu</h4>
                 <ul class="nav nav-tabs">
-                    <li ng-class="{active: activetab == '/'}"><a href="#tela">Tela</a></li>
-                    <li ng-class="{active: activetab == '/contato'}"><a href="#contato">Contato</a></li>
+                    <li ng-class="{active: activetab == '/'}"><a href="#">home</a></li>
+                    <li ng-class="{active: activetab == '/cadastro_formulario'}"><a href="#cadastro_formulario">Cadastro</a></li>
+                    <li ng-class="{active: activetab == '/historico_formulario'}"><a href="#historico_formulario">Histórico Clínico</a></li>
+                    <li ng-class="{active: activetab == '/habitos_formulario'}"><a href="#habitos_formulário">Hábitos</a></li>
+                    <li ng-class="{active: activetab == '/tratamentos_formulario'}"><a href="#tratamentos_formulário">Tratamentos Questionário</a></li>
+                    <li ng-class="{active: activetab == '/tratamentos_lista'}"><a href="#tratamentos_lista">Lista de tratamentos</a></li>
                 </ul>
             </div>
         </div>

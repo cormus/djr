@@ -10,7 +10,7 @@ function App()
 	
 	obj.initFitText = function()
 	{
-		FitText(document.getElementsByClassName('fittext'), 1.2, {minFontSize:17, maxFontSize: 33});
+		FitText(document.getElementsByClassName('fittext-1'), 1.2, {minFontSize:17, maxFontSize: 33});
 		FitText(document.getElementsByClassName('fittext-2'), 1.2, {minFontSize:17, maxFontSize: 25});
 		FitText(document.getElementsByClassName('fittext-3'), 1.6, {minFontSize:12, maxFontSize: 25});
 	}
