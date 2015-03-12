@@ -21,11 +21,11 @@ angularConfig.config(function($routeProvider, $locationProvider)
       templateUrl : 'views/habitos_formulario.html',
       controller  : 'HabitosFormularioCtrl',
    })
-   .when('/historico_formulario', {
+   .when('/tratamentos_formulario', {
       templateUrl : 'views/tratamentos_formulario.html',
       controller  : 'TratamentosFormularioCtrl',
    })
-   .when('/historico_formulario', {
+   .when('/tratamentos_lista', {
       templateUrl : 'views/tratamentos_lista.html',
       controller  : 'TratamentosListaCtrl',
    })

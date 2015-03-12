@@ -1,22 +1,14 @@
 angularConfig.controller('HomeCtrl', function($rootScope, $location){
-	window.setTimeout(function(){
-
-		var gruposList		   = [];
-
-		function loadGrupo()
-		{
-			//realiza uma busca no banco de dados
-			function queryDBGrupo(tx) 
-			{
-				tx.executeSql("SELECT * FROM framwork_teste", [], querySuccessGrupo, errorCB);
-			}
-			function querySuccessGrupo(tx, results) 
-			{
-				gruposList = results.rows;
-			}
-			db.transaction(queryDBGrupo, errorCB);
-		}
-	}, 1000);
+	
+	 //fecha o snap
+    appClass.snap.close();
+	
+	//função apra ir para a opagina de novo cadastro
+	$rootScope.novoCadastro = function()
+	{
+		$location.path('cadastro_formulario');
+	}
+	
 });
 	
 angularConfig.controller('CadastroFormularioCtrl', function($rootScope, $location){
@@ -24,6 +16,11 @@ angularConfig.controller('CadastroFormularioCtrl', function($rootScope, $locatio
     appClass.snap.close();
     //coloca uma classe se ativado no link do menu
     $rootScope.activetab = $location.path();
+	
+	$rootScope.historicoFormulario = function()
+	{
+		$location.path('historico_formulario');
+	}
 });
 
 angularConfig.controller('HistoricoFormularioCtrl', function($rootScope, $location){
@@ -31,6 +28,13 @@ angularConfig.controller('HistoricoFormularioCtrl', function($rootScope, $locati
     appClass.snap.close();
     //coloca uma classe se ativado no link do menu
     $rootScope.activetab = $location.path();
+	
+	
+	$rootScope.habitosFormulario = function()
+	{
+		$location.path('habitos_formulario');
+	}
+	
 });  
 	
 angularConfig.controller('HabitosFormularioCtrl', function($rootScope, $location){
@@ -38,6 +42,11 @@ angularConfig.controller('HabitosFormularioCtrl', function($rootScope, $location
     appClass.snap.close();
     //coloca uma classe se ativado no link do menu
     $rootScope.activetab = $location.path();
+	
+	$rootScope.tratamentosFormulario = function()
+	{
+		$location.path('tratamentos_formulario');
+	}
 });  
 	
 angularConfig.controller('TratamentosFormularioCtrl', function($rootScope, $location){
@@ -45,6 +54,11 @@ angularConfig.controller('TratamentosFormularioCtrl', function($rootScope, $loca
     appClass.snap.close();
     //coloca uma classe se ativado no link do menu
     $rootScope.activetab = $location.path();
+	
+	$rootScope.tratamentosLista = function()
+	{
+		$location.path('tratamentos_lista');
+	}
 });  
 
 angularConfig.controller('TratamentosListaCtrl', function($rootScope, $location){
