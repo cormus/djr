@@ -24,6 +24,18 @@
      src: url('fonts/OpenSans-ExtraBold.ttf');
 }
 
+@font-face
+{
+    font-family: 'swiss_721_thin_bt';
+    src: url('fonts/swiss_721_thin_bt-webfont.eot');
+
+}
+
+@font-face
+{
+    font-family: 'swiss_721_thin_bt';
+    src: url("fonts/swiss_721_thin_bt-webfont.ttf") format("truetype");
+}
 
 *{
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
@@ -61,3 +73,106 @@ body {
         color:#2D2F85;
         text-shadow: inherit;
     }
+
+/*Estilo para Formulários*/
+.width-50-l
+{
+    margin-bottom: 0.5%;
+}
+.titulo-formularios {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'swiss_721_thin_bt';
+    text-transform: uppercase;
+    font-size: 34px;    
+    color: #0B87B4;
+}
+.input-100-l{
+    width: 100%;
+    height: 37px;
+    float: left;
+    border: 1px solid #8c8c8c;
+    background: white;
+    padding-left: 5px;
+    font: 15px 'Open Sans Light';
+    color: black;
+    margin-bottom: 0.5%;
+}
+.input-99-l {
+    width: 99%;
+}
+.texto-int-form {
+    font-size: 15px;
+}
+.btn-novo-cadastro {
+    width: 100%;
+    margin-top: 2%;
+}
+    .btn-novo-cadastro .btn-formulario {
+        width: 196px;
+        height: 36px;
+        background: url(../img/btn-formularios.png) no-repeat center;
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+        color: white;
+        font: 12px 'Open Sans Light';
+        padding-top: 10px;
+    }
+
+/* .squaredFour */
+.squaredFour {
+  width: 100%;
+  position: relative;
+  margin: 0px auto;
+label {
+    width: 100%;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 0;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+&:after {
+      content: '';
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border: 3px solid #333;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+&:hover::after {
+      opacity: 0.5;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }    
+}
+.squaredFour label {
+    width: 100%;
+    float: left;
+    font-size: 15px;
+}
+/* end .squaredFour */
+
+@media (max-width: 640px)
+{
+    .width-640-px,
+    .input-99-l{
+        width: 100%;
+    }
+}
