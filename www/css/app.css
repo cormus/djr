@@ -35,13 +35,13 @@ body {
     color:#000;
 }
 
-#content,
-#toolbar
+#content
 {
     background: #FFF;
 }
 #toolbar
-{
+{   
+    background: url(../img/back-toolbar.jpg) repeat-x;
     height: 35px;
     border-bottom: 1px solid #C2C7D1;
 }
