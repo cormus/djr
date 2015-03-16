@@ -45,7 +45,10 @@ body {
     height: 35px;
     border-bottom: 1px solid #C2C7D1;
 }
-
+    #toolbar h1 .img-topo{
+        margin: 0 auto;
+        margin-top: -13px;
+    }
     #open-left
     {
         height: 100%;
