@@ -98,6 +98,17 @@ body {
     color: black;
     margin-bottom: 0.5%;
 }
+.textarea-form{
+    width: 100%;
+    height: 40px;
+    float: left;
+    border: 1px solid #8c8c8c;
+    background: white;
+    padding-left: 5px;
+    font: 15px 'Open Sans Light';
+    color: black;
+    resize: none;
+}
 .input-99-l {
     width: 99%;
 }
@@ -119,6 +130,11 @@ body {
         font: 12px 'Open Sans Light';
         padding-top: 10px;
     }
+
+.border-margin {
+    border-bottom: 1px solid #EBEEF5;
+    margin-bottom: 1%;
+}
 
 /* .squaredFour */
 .squaredFour {
@@ -168,6 +184,17 @@ label {
     font-size: 15px;
 }
 /* end .squaredFour */
+
+
+@media (max-width: 768px)
+{
+    .width-768-100l {
+        width: 100%;
+    }
+    .width-768-50l {
+        width: 50%;
+    }
+}
 
 @media (max-width: 640px)
 {
