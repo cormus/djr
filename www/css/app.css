@@ -53,9 +53,9 @@ body {
 }
 #toolbar
 {   
-    background: url(../img/back-toolbar.jpg) repeat-x;
-    height: 35px;
-    border-bottom: 1px solid #C2C7D1;
+    background: #0b87b5;
+    height: 40px;
+    border-bottom: none;
 }
     #toolbar h1 .img-topo{
         margin: 0 auto;
@@ -73,6 +73,11 @@ body {
         color:#2D2F85;
         text-shadow: inherit;
     }
+.logo-home{
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
 
 /*Estilo para Formulários*/
 .width-50-l
@@ -120,15 +125,15 @@ body {
     margin-top: 2%;
 }
     .btn-novo-cadastro .btn-formulario {
-        width: 196px;
-        height: 36px;
-        background: url(../img/btn-formularios.png) no-repeat center;
+        width: 220px;
+        height: 60px;
+        background: #0b87b5;
         margin: 0 auto;
         text-align: center;
         text-transform: uppercase;
         color: white;
-        font: 12px 'Open Sans Light';
-        padding-top: 10px;
+        font: 15px 'Open Sans Light';
+        padding-top: 20px;
     }
 
 .border-margin {
@@ -186,6 +191,13 @@ label {
 /* end .squaredFour */
 
 
+@media (max-width: 1024px)
+{
+    .logo-home{
+        margin-top: 10%;
+        margin-bottom: 6%;
+    }
+}
 @media (max-width: 768px)
 {
     .width-768-100l {
@@ -194,6 +206,7 @@ label {
     .width-768-50l {
         width: 50%;
     }
+    
 }
 
 @media (max-width: 640px)

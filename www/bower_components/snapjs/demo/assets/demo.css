@@ -152,8 +152,8 @@
 }
 
 .snap-drawer {
-	background: #393a4b;
-	color: #eee;
+	background: #202020;
+	color: #fff;
 }
 
 .snap-drawer h3 {
@@ -178,10 +178,10 @@
   display: block;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 15px;
-  font-weight: bold;
-  text-shadow: 0 1px 0 #000;
+  /*font-weight: bold;
+  text-shadow: 0 1px 0 #000;*/
   text-decoration: none;
-  color: #ccc;
+  color: #fff;
   text-indent: 20px;
 }
 
