@@ -226,6 +226,33 @@ label {
 /* end .squaredFour */
 
 
+
+/*Estilo para lista de tramamentos*/
+#conteudo_tratamentos {
+    width: 100%;
+    float: left;
+    padding-top: 1%;
+    display: none;
+    background: #f6f7f8;    
+}
+.lista_tratamentos {
+    width: 100%;
+    float: left;
+}
+    .lista-tratamentos li {
+        margin-top: 15px;
+    }
+.conteudos_ {
+    display: none;
+    text-align: justify;
+    width: 80%;
+    margin: 0 auto;
+}
+.nome-tratamento {
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+}
 @media (max-width: 1024px)
 {
     .logo-home{

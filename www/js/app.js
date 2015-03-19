@@ -41,3 +41,33 @@ function App()
         FastClick.attach(document.body);
     }
 }
+/*Funcao para abrir bloco com a lista de tratamentos*/
+var abrir = 0;
+function abre_tratamento()
+{
+	if(abrir == 0)
+	{
+		$('#conteudo_tratamentos').css( 'display', 'block');
+                 abrir = 1;
+            }else{
+		    $('#conteudo_tratamentos').css( 'display', 'none');
+		    abrir = 0;
+           }
+
+}
+/*Funçaõ para expandir os conteudos do tramento*/
+var aberta = -1;
+function abre(valor)
+
+         {
+            if(valor != aberta){
+
+                $('#'+valor).animate({height:'toggle'});
+                $('#'+aberta).animate({height:'toggle'});
+                aberta = valor;
+            }else{
+                $('#'+aberta).animate({height:'toggle'});
+                aberta = -1;
+            }
+
+}
