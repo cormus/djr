@@ -11,19 +11,18 @@ angularConfig.controller('HomeCtrl', function($rootScope, $location){
 	
 });
 
-
-var cadastroNomeValor       = 'Nome';
-var cadastroEnderecoValor   = 'Endereço';
-var cadastroCepValor        = 'CEP';
-var cadastroCidadeValor     = 'Cidade';
-var cadastroBairroValor     = 'Bairro';
-var cadastroEstadoValor     = 'Estado';
-var cadastroNascimentoValor = 'Data nascimento';
-var cadastroEmailValor      = 'Email';
-var cadastroTelefoneValor   = 'Telefone';
-var cadastroCelularValor    = 'Celular';
-var cadastroWhatsappValor   = 'Whatsapp';
-var cadastroReceberInformacaoValor = '';
+var cadastroNomeValor       = '';
+var cadastroEnderecoValor   = '';
+var cadastroCepValor        = '';
+var cadastroCidadeValor     = '';
+var cadastroBairroValor     = '';
+var cadastroEstadoValor     = '';
+var cadastroNascimentoValor = '';
+var cadastroEmailValor      = '';
+var cadastroTelefoneValor   = '';
+var cadastroCelularValor    = '';
+var cadastroWhatsappValor   = '';
+var cadastroReceberInformacaoValor = [];
 	
 angularConfig.controller('CadastroFormularioCtrl', function($rootScope, $location){
     //fecha o snap
@@ -42,7 +41,11 @@ angularConfig.controller('CadastroFormularioCtrl', function($rootScope, $locatio
 	$rootScope.cadastroTelefoneValor   = cadastroTelefoneValor;
 	$rootScope.cadastroCelularValor    = cadastroCelularValor;
 	$rootScope.cadastroWhatsappValor   = cadastroWhatsappValor;
-	$rootScope.cadastroReceberInformacaoValor = cadastroReceberInformacaoValor;
+	
+	$rootScope.cadastroReceberInformacaoValor1 = (cadastroReceberInformacaoValor.indexOf('1') > -1);
+	$rootScope.cadastroReceberInformacaoValor2 = (cadastroReceberInformacaoValor.indexOf('2') > -1);
+	$rootScope.cadastroReceberInformacaoValor3 = (cadastroReceberInformacaoValor.indexOf('3') > -1);
+	$rootScope.cadastroReceberInformacaoValor4 = (cadastroReceberInformacaoValor.indexOf('4') > -1);
 	
 	$rootScope.historicoFormulario = function()
 	{
@@ -58,10 +61,48 @@ angularConfig.controller('CadastroFormularioCtrl', function($rootScope, $locatio
 		var cadastroCelular    = document.getElementsByName('cadastro-celular');
 		var cadastroWhatsapp   = document.getElementsByName('cadastro-whatsapp');
 		var cadastroReceberInformacao = document.getElementsByName('cadastro-receber-informacao');
-
+		
+		cadastroReceberInformacaoValor = [];
+		for (var i=0;i<cadastroReceberInformacao.length;i++)
+		{ 
+			if (cadastroReceberInformacao[i].checked == true)
+			{ 
+				cadastroReceberInformacaoValor.push(cadastroReceberInformacao[i].value);
+			}
+		}
+		
+		cadastroNomeValor       = cadastroNome[0].value;
+		cadastroEnderecoValor   = cadastroEndereco[0].value;
+		cadastroCepValor        = cadastroCep[0].value;
+		cadastroCidadeValor     = cadastroCidade[0].value;
+		cadastroBairroValor     = cadastroBairro[0].value;
+		cadastroEstadoValor     = cadastroEstado[0].value;
+		cadastroNascimentoValor = cadastroNascimento[0].value;
+		cadastroEmailValor      = cadastroEmail[0].value;
+		cadastroTelefoneValor   = cadastroTelefone[0].value;
+		cadastroCelularValor    = cadastroCelular[0].value;
+		cadastroWhatsappValor   = cadastroWhatsapp[0].value;
+		
 		$location.path('historico_formulario');
 	}
+	
+	//aplica as mudanças
+	//$rootScope.$apply();
 });
+
+
+var historicoMedicamentoValor     = '';
+var historicoMedicamentoTipoValor = '';
+var historicoAlergiaValor       = '';
+var historicoAlergiaTipoValor   = '';
+var historicoCardiacoValor      = '';
+var historicoCardiacoTipoValor  = '';
+var historicoHormonaisValor     = '';
+var historicoHormonaisTipoValor = '';
+var historicoTratamentoValor    = '';
+var historicoHipertensaoValor   = '';
+var historicoDiabeticoValor     = '';
+var historicoClinicoValor       = '';
 
 angularConfig.controller('HistoricoFormularioCtrl', function($rootScope, $location){
     //fecha o snap
@@ -69,27 +110,111 @@ angularConfig.controller('HistoricoFormularioCtrl', function($rootScope, $locati
     //coloca uma classe se ativado no link do menu
     $rootScope.activetab = $location.path();
 	
+	$rootScope.historicoMedicamentoValor1    = (cadastroNomeValor == '1');
+	$rootScope.historicoMedicamentoValor2    = (cadastroNomeValor == '0');
+	$rootScope.historicoMedicamentoTipoValor = historicoMedicamentoTipoValor;
 	
-	var historicoMedicamento     =  document.getElementsByName('historico-medicamento');
-	var historicoMedicamentoTipo =  document.getElementsByName('historico-medicamento-tipo');
-	var historicoAlergia       = document.getElementsByName('historico-alergia');
-	var historicoAlergiaTipo   = document.getElementsByName('historico-alergia-tipo');
-	var historicoCardiaco      = document.getElementsByName('historico-cardiaco');
-	var historicoCardiacoTipo  = document.getElementsByName('historico-cardiaco-tipo');
-	var historicoHormonais     = document.getElementsByName('historico-hormonais');
-	var historicoHormonaisTipo = document.getElementsByName('historico-hormonais-tipo');
-	var historicoTratamento    = document.getElementsByName('historico-tratamento');
-	var historicoHipertensao   = document.getElementsByName('historico-hipertensao');
-	var historicoDiabetico     = document.getElementsByName('historico-diabetico');
-	var historicoClinico       = document.getElementsByName('historico-clinico');
+	$rootScope.historicoAlergiaValor1      = (historicoAlergiaValor == '1');
+	$rootScope.historicoAlergiaValor2      = (historicoAlergiaValor == '0');
+	$rootScope.historicoAlergiaTipoValor   = historicoAlergiaTipoValor;
+	
+	$rootScope.historicoCardiacoValor1     = (historicoCardiacoValor == '1');
+	$rootScope.historicoCardiacoValor2     = (historicoCardiacoValor == '0');
+	$rootScope.historicoCardiacoTipoValor  = historicoCardiacoTipoValor;
+	
+	$rootScope.historicoHormonaisValor1    = (historicoHormonaisValor == '1');
+	$rootScope.historicoHormonaisValor2    = (historicoHormonaisValor == '0');
+	$rootScope.historicoHormonaisTipoValor = historicoHormonaisTipoValor;
+	
+	$rootScope.historicoTratamentoValor1   = (historicoTratamentoValor == '1');
+	$rootScope.historicoTratamentoValor2   = (historicoTratamentoValor == '0');
+	
+	$rootScope.historicoHipertensaoValor1  = (historicoHipertensaoValor == '1');
+	$rootScope.historicoHipertensaoValor2  = (historicoHipertensaoValor == '0');
+	
+	$rootScope.historicoDiabeticoValor1    = (historicoDiabeticoValor == '1');
+	$rootScope.historicoDiabeticoValor2    = (historicoDiabeticoValor == '0');
+	
+	$rootScope.historicoClinicoValor       = historicoClinicoValor;
 	
 	$rootScope.habitosFormulario = function()
 	{
-		$location.path('habitos_formulario');
+		var historicoMedicamento     = document.getElementsByName('historico-medicamento');
+		var historicoMedicamentoTipo = document.getElementsByName('historico-medicamento-tipo');
+		var historicoAlergia         = document.getElementsByName('historico-alergia');
+		var historicoAlergiaTipo     = document.getElementsByName('historico-alergia-tipo');
+		var historicoCardiaco        = document.getElementsByName('historico-cardiaco');
+		var historicoCardiacoTipo    = document.getElementsByName('historico-cardiaco-tipo');
+		var historicoHormonais       = document.getElementsByName('historico-hormonais');
+		var historicoHormonaisTipo   = document.getElementsByName('historico-hormonais-tipo');
+		var historicoTratamento      = document.getElementsByName('historico-tratamento');
+		var historicoHipertensao     = document.getElementsByName('historico-hipertensao');
+		var historicoDiabetico       = document.getElementsByName('historico-diabetico');
+		var historicoClinico         = document.getElementsByName('historico-clinico');
+		
+		for(var i=0;i<historicoMedicamento.length;i++)
+		{ 
+			if (historicoMedicamento[i].checked == true)
+			{ 
+				cadastroNomeValor = historicoMedicamento[i].value;
+			}
+		}
+		
+		for(var i=0;i<historicoAlergia.length;i++)
+		{ 
+			if (historicoAlergia[i].checked == true)
+			{ 
+				historicoAlergiaValor = historicoAlergia[i].value;
+			}
+		}
+		
+		for(var i=0;i<historicoCardiaco.length;i++)
+		{ 
+			if (historicoCardiaco[i].checked == true)
+			{ 
+				historicoCardiacoValor = historicoCardiaco[i].value;
+			}
+		}
+		
+		for(var i=0;i<historicoHormonais.length;i++)
+		{ 
+			if (historicoHormonais[i].checked == true)
+			{ 
+				historicoHormonaisValor = historicoHormonais[i].value;
+			}
+		}
+		
+		for(var i=0;i<historicoTratamento.length;i++)
+		{ 
+			if (historicoTratamento[i].checked == true)
+			{ 
+				historicoTratamentoValor = historicoTratamento[i].value;
+			}
+		}
+		
+		for(var i=0;i<historicoHipertensao.length;i++)
+		{ 
+			if (historicoHipertensao[i].checked == true)
+			{ 
+				historicoHipertensaoValor = historicoHipertensao[i].value;
+			}
+		}
+		
+		for(var i=0;i<historicoDiabetico.length;i++)
+		{ 
+			if (historicoHipertensao[i].checked == true)
+			{ 
+				historicoDiabeticoValor = historicoDiabetico[i].value;
+			}
+		}
+		
+		//$location.path('habitos_formulario');
 	}
 	
 });  
 	
+
+
 angularConfig.controller('HabitosFormularioCtrl', function($rootScope, $location){
     //fecha o snap
     appClass.snap.close();
