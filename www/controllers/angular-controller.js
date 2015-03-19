@@ -110,30 +110,23 @@ angularConfig.controller('HistoricoFormularioCtrl', function($rootScope, $locati
     //coloca uma classe se ativado no link do menu
     $rootScope.activetab = $location.path();
 	
-	$rootScope.historicoMedicamentoValor1    = (cadastroNomeValor == '1');
-	$rootScope.historicoMedicamentoValor2    = (cadastroNomeValor == '0');
+	$rootScope.historicoMedicamentoValor    = historicoMedicamentoValor;
 	$rootScope.historicoMedicamentoTipoValor = historicoMedicamentoTipoValor;
 	
-	$rootScope.historicoAlergiaValor1      = (historicoAlergiaValor == '1');
-	$rootScope.historicoAlergiaValor2      = (historicoAlergiaValor == '0');
+	$rootScope.historicoAlergiaValor      = historicoAlergiaValor;
 	$rootScope.historicoAlergiaTipoValor   = historicoAlergiaTipoValor;
 	
-	$rootScope.historicoCardiacoValor1     = (historicoCardiacoValor == '1');
-	$rootScope.historicoCardiacoValor2     = (historicoCardiacoValor == '0');
+	$rootScope.historicoCardiacoValor     = historicoCardiacoValor;
 	$rootScope.historicoCardiacoTipoValor  = historicoCardiacoTipoValor;
 	
-	$rootScope.historicoHormonaisValor1    = (historicoHormonaisValor == '1');
-	$rootScope.historicoHormonaisValor2    = (historicoHormonaisValor == '0');
+	$rootScope.historicoHormonaisValor    = historicoHormonaisValor;
 	$rootScope.historicoHormonaisTipoValor = historicoHormonaisTipoValor;
 	
-	$rootScope.historicoTratamentoValor1   = (historicoTratamentoValor == '1');
-	$rootScope.historicoTratamentoValor2   = (historicoTratamentoValor == '0');
+	$rootScope.historicoTratamentoValor   = historicoTratamentoValor;
 	
-	$rootScope.historicoHipertensaoValor1  = (historicoHipertensaoValor == '1');
-	$rootScope.historicoHipertensaoValor2  = (historicoHipertensaoValor == '0');
+	$rootScope.historicoHipertensaoValor  = historicoHipertensaoValor;
 	
-	$rootScope.historicoDiabeticoValor1    = (historicoDiabeticoValor == '1');
-	$rootScope.historicoDiabeticoValor2    = (historicoDiabeticoValor == '0');
+	$rootScope.historicoDiabeticoValor    = historicoDiabeticoValor;
 	
 	$rootScope.historicoClinicoValor       = historicoClinicoValor;
 	
@@ -152,11 +145,17 @@ angularConfig.controller('HistoricoFormularioCtrl', function($rootScope, $locati
 		var historicoDiabetico       = document.getElementsByName('historico-diabetico');
 		var historicoClinico         = document.getElementsByName('historico-clinico');
 		
+		historicoMedicamentoTipoValor = historicoMedicamentoTipo[0].value;
+		historicoAlergiaTipoValor     = historicoAlergiaTipo[0].value;
+		historicoCardiacoTipoValor    = historicoCardiacoTipo[0].value;
+		historicoHormonaisTipoValor   = historicoHormonaisTipo[0].value;
+		historicoClinicoValor         = historicoClinico[0].value;
+		
 		for(var i=0;i<historicoMedicamento.length;i++)
 		{ 
 			if (historicoMedicamento[i].checked == true)
 			{ 
-				cadastroNomeValor = historicoMedicamento[i].value;
+				historicoMedicamentoValor = historicoMedicamento[i].value;
 			}
 		}
 		
@@ -202,7 +201,7 @@ angularConfig.controller('HistoricoFormularioCtrl', function($rootScope, $locati
 		
 		for(var i=0;i<historicoDiabetico.length;i++)
 		{ 
-			if (historicoHipertensao[i].checked == true)
+			if (historicoDiabetico[i].checked == true)
 			{ 
 				historicoDiabeticoValor = historicoDiabetico[i].value;
 			}
