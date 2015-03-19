@@ -23,15 +23,15 @@ db.transaction(function(tx){
 		 //se a tabela não existir ela é criada
 		 if(results.rows.length == 0)
 		 {
-		 	createTableTESTE();
+		 	createTableCadastros();
 		 }
 	});
 }, errorCB);
 //função para criar
-function createTableTESTE()
+function createTableCadastros()
 {
 	db.transaction(function(tx) {
-		tx.executeSql("CREATE TABLE IF NOT EXISTS framwork_teste (id INTEGER PRIMARY KEY ASC, nome TEXT)");
-		tx.executeSql("INSERT INTO framwork_teste (id, nome) VALUES (1,  ?)", ['dados']);
+		tx.executeSql("CREATE TABLE IF NOT EXISTS djr_cadastros (id INTEGER PRIMARY KEY ASC, status INTEGER, nome TEXT, cadastro TEXT, historico TEXT, habitos TEXT, tratamentos TEXT)");
+		//tx.executeSql("INSERT INTO djr_cadastros (id, nome) VALUES (1,  ?)", ['dados']);
 	}, errorCB);
 }
