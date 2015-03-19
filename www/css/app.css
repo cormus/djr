@@ -101,6 +101,9 @@ body {
     color: #0B87B4;
     padding-top: 17px;
 }
+.font-bold {
+    font-weight: bold;
+}
 .input-100-l{
     width: 98%;
     height: 37px;
