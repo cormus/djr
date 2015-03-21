@@ -1,86 +1,111 @@
 <!-- contato.html -->
 <div class="width-100-l text-c height-100">
-	<div class="width-100-l">
-        <img src="img/logo-home.png" alt="Clínica Dr. Josenildo Rodrigues" class='logo-home'/>
-	</div>
+    <div class="width-100-l">
+        <img src="img/logo-home.png" alt="Clínica Dr. Josenildo Rodrigues" class='logo-home' />
+    </div>
     <div class="width-80 margin-auto">
         <div class="titulo-principal">
             <h1 class="titulo-formularios">Ficha de Avaliação</h1>
         </div>
     </div>
-	<div class="width-80 margin-auto">
-		<div class="width-100-l back-white-margin">
-			<div><input type="text" name="cadastro-nome"     placeholder="Nome" class="input-100-l" value="{{ cadastroNomeValor }}"/></div>
-			<div><input type="text" name="cadastro-endereco" placeholder="Endereço" class="input-100-l" value="{{ cadastroEnderecoValor }}"/></div>
-		</div>
-		<div class="width-50-l width-640-px back-white">
-			<div><input type="text" name="cadastro-cep"    placeholder="CEP" class="input-100-l input-97-l"  value="{{ cadastroCepValor }}"/></div>
-			<div><input type="text" name="cadastro-cidade" placeholder="Cidade" class="input-100-l input-97-l"  value="{{ cadastroCidadeValor }}"/></div>
-		</div>
-		<div class="width-50-l width-640-px back-white">
-			<div><input type="text" name="cadastro-bairro" placeholder="Bairro" class="input-100-l input-97"  value="{{ cadastroBairroValor }}"/></div>
-			<div><input type="text" name="cadastro-estado" placeholder="Estado" class="input-100-l input-97"  value="{{ cadastroEstadoValor }}"/></div>
-		</div>
-		<div class="width-50-l width-640-px back-white">
-			<div><input type="text" name="cadastro-nascimento" placeholder="Data nascimento" class="input-100-l input-97-l" value="{{ cadastroNascimentoValor }}"/></div>
-			<div><input type="text" name="cadastro-email"      placeholder="Email" class="input-100-l input-97-l" value="{{ cadastroEmailValor }}"/></div>
-		</div>
-		<div class="width-50-l width-640-px back-white">
-			<div><input type="text" name="cadastro-telefone" placeholder="Telefone" class="input-100-l input-97" value="{{ cadastroTelefoneValor }}"/></div>
-			<div><input type="text" name="cadastro-celular"  placeholder="Celular" class="input-100-l input-97"  value="{{ cadastroCelularValor }}"/></div>
-		</div>
-		<div class="width-50-l width-640-px back-white">
-			<div><input type="text" name="cadastro-whatsapp" placeholder="Whatsapp" class="input-100-l input-97-l" value="{{ cadastroWhatsappValor }}"/></div>
-		</div>
-        <div class="width-50-l width-640-px back-white"><div class="bloco-cinza"></div></div>
-		<div class="width-100-l back-white-margin">
-			<div class="width-50-l width-640-px">
-				<h1 class="texto-int-form">Como você gostaria de receber informações da clínica ?</h1>
-			</div>
-			<div class="width-50-l width-640-px">
-				<div class="width-25-l ">
+    <div class="width-80 margin-auto">
+        <div class="width-100-l back-white-margin">
+            <div>
+                <input type="text" name="cadastro-nome" placeholder="Nome" class="input-100-l" value="{{ cadastroNomeValor }}" />
+            </div>
+            <div>
+                <input type="text" name="cadastro-endereco" placeholder="Endereço" class="input-100-l" value="{{ cadastroEnderecoValor }}" />
+            </div>
+        </div>
+        <div class="width-50-l width-640-px back-white">
+            <div>
+                <input type="text" name="cadastro-cep" placeholder="CEP" class="input-100-l input-97-l" value="{{ cadastroCepValor }}" />
+            </div>
+            <div>
+                <input type="text" name="cadastro-cidade" placeholder="Cidade" class="input-100-l input-97-l" value="{{ cadastroCidadeValor }}" />
+            </div>
+        </div>
+        <div class="width-50-l width-640-px back-white">
+            <div>
+                <input type="text" name="cadastro-bairro" placeholder="Bairro" class="input-100-l input-97" value="{{ cadastroBairroValor }}" />
+            </div>
+            <div>
+                <input type="text" name="cadastro-estado" placeholder="Estado" class="input-100-l input-97" value="{{ cadastroEstadoValor }}" />
+            </div>
+        </div>
+        <div class="width-50-l width-640-px back-white">
+            <div>
+                <input type="text" name="cadastro-nascimento" placeholder="Data nascimento" class="input-100-l input-97-l" value="{{ cadastroNascimentoValor }}" />
+            </div>
+            <div>
+                <input type="text" name="cadastro-email" placeholder="Email" class="input-100-l input-97-l" value="{{ cadastroEmailValor }}" />
+            </div>
+        </div>
+        <div class="width-50-l width-640-px back-white">
+            <div>
+                <input type="text" name="cadastro-telefone" placeholder="Telefone" class="input-100-l input-97" value="{{ cadastroTelefoneValor }}" />
+            </div>
+            <div>
+                <input type="text" name="cadastro-celular" placeholder="Celular" class="input-100-l input-97" value="{{ cadastroCelularValor }}" />
+            </div>
+        </div>
+        <div class="width-50-l width-640-px back-white">
+            <div>
+                <input type="text" name="cadastro-whatsapp" placeholder="Whatsapp" class="input-100-l input-97-l" value="{{ cadastroWhatsappValor }}" />
+            </div>
+        </div>
+        <div class="width-50-l width-640-px back-white">
+            <div class="bloco-cinza"></div>
+        </div>
+        <div class="width-100-l back-white-margin">
+            <div class="width-50-l width-640-px">
+                <h1 class="texto-int-form">Como você gostaria de receber informações da clínica ?</h1>
+            </div>
+            <div class="width-50-l width-640-px">
+                <div class="width-25-l ">
                     <section title=".squaredFour">
-                    <!-- .squaredFour -->
+                        <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="1" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor1" />
-                          <label for="squaredFour">Telefone</label>
+                            <input type="checkbox" value="1" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor1" />
+                            <label for="squaredFour">Telefone</label>
                         </div>
-                    <!-- end .squaredFour -->
-                  </section>
+                        <!-- end .squaredFour -->
+                    </section>
                 </div>
-				<div class="width-25-l"> <section title=".squaredFour">
-                    <!-- .squaredFour -->
+                <div class="width-25-l">
+                    <section title=".squaredFour">
+                        <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="2" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor2" />
-                          <label for="squaredFour">SMS</label>
+                            <input type="checkbox" value="2" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor2" />
+                            <label for="squaredFour">SMS</label>
                         </div>
-                    <!-- end .squaredFour -->
-                  </section>
+                        <!-- end .squaredFour -->
+                    </section>
                 </div>
-				<div class="width-25-l">
-                     <section title=".squaredFour">
-                    <!-- .squaredFour -->
+                <div class="width-25-l">
+                    <section title=".squaredFour">
+                        <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="3" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor3" />
-                          <label for="squaredFour">WhatsApp</label>
+                            <input type="checkbox" value="3" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor3" />
+                            <label for="squaredFour">WhatsApp</label>
                         </div>
-                    <!-- end .squaredFour -->
-                  </section>
+                        <!-- end .squaredFour -->
+                    </section>
                 </div>
-				<div class="width-25-l">
-                     <section title=".squaredFour">
-                    <!-- .squaredFour -->
+                <div class="width-25-l">
+                    <section title=".squaredFour">
+                        <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="4" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor4" />
-                          <label for="squaredFour">Email</label>
+                            <input type="checkbox" value="4" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor4" />
+                            <label for="squaredFour">Email</label>
                         </div>
-                    <!-- end .squaredFour -->
-                  </section>
+                        <!-- end .squaredFour -->
+                    </section>
                 </div>
-			</div>
-		</div>
-		<div class="btn-novo-cadastro float-l btn-back-color" ng-click="historicoFormulario()">
+            </div>
+        </div>
+        <div class="btn-novo-cadastro float-l btn-back-color" ng-click="historicoFormulario()">
             <div class="btn-formulario">Histórico clínico</div>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>

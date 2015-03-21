@@ -9,6 +9,9 @@ angularConfig.controller('HomeCtrl', function($rootScope, $location){
 		$location.path('cadastro_formulario');
 	}
 	
+    setTimeout(function(){
+        appClass.initIScroll();
+    }, 1000);
 });
 
 var cadastroNomeValor       = '';
@@ -86,6 +89,7 @@ angularConfig.controller('CadastroFormularioCtrl', function($rootScope, $locatio
 		$location.path('historico_formulario');
 	}
 	
+    
 	//aplica as mudanças
 	//$rootScope.$apply();
 });
