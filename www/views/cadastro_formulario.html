@@ -8,47 +8,47 @@
     <div class="width-80 margin-auto">
         <div class="width-100-l back-white-margin">
             <div>
-                <input type="text" name="cadastro-nome" placeholder="Nome" class="input-100-l" value="{{ cadastroNomeValor }}" />
+                <input type="text" name="cadastro-nome" placeholder="Nome" class="input-100-l" ng-model="usuario.nome" />
             </div>
             <div>
-                <input type="text" name="cadastro-endereco" placeholder="Endereço" class="input-100-l" value="{{ cadastroEnderecoValor }}" />
-            </div>
-        </div>
-        <div class="width-50-l width-640-px back-white">
-            <div>
-                <input type="text" name="cadastro-cep" placeholder="CEP" class="input-100-l input-97-l" value="{{ cadastroCepValor }}" />
-            </div>
-            <div>
-                <input type="text" name="cadastro-cidade" placeholder="Cidade" class="input-100-l input-97-l" value="{{ cadastroCidadeValor }}" />
+                <input type="text" name="cadastro-endereco" placeholder="Endereço" class="input-100-l" ng-model="usuario.endereco" />
             </div>
         </div>
         <div class="width-50-l width-640-px back-white">
             <div>
-                <input type="text" name="cadastro-bairro" placeholder="Bairro" class="input-100-l input-97" value="{{ cadastroBairroValor }}" />
+                <input type="text" name="cadastro-cep" placeholder="CEP" class="input-100-l input-97-l" ng-model="usuario.cep" />
             </div>
             <div>
-                <input type="text" name="cadastro-estado" placeholder="Estado" class="input-100-l input-97" value="{{ cadastroEstadoValor }}" />
-            </div>
-        </div>
-        <div class="width-50-l width-640-px back-white">
-            <div>
-                <input type="text" name="cadastro-nascimento" placeholder="Data nascimento" class="input-100-l input-97-l" value="{{ cadastroNascimentoValor }}" />
-            </div>
-            <div>
-                <input type="text" name="cadastro-email" placeholder="Email" class="input-100-l input-97-l" value="{{ cadastroEmailValor }}" />
+                <input type="text" name="cadastro-cidade" placeholder="Cidade" class="input-100-l input-97-l" ng-model="usuario.cidade" />
             </div>
         </div>
         <div class="width-50-l width-640-px back-white">
             <div>
-                <input type="text" name="cadastro-telefone" placeholder="Telefone" class="input-100-l input-97" value="{{ cadastroTelefoneValor }}" />
+                <input type="text" name="cadastro-bairro" placeholder="Bairro" class="input-100-l input-97" ng-model="usuario.bairro" />
             </div>
             <div>
-                <input type="text" name="cadastro-celular" placeholder="Celular" class="input-100-l input-97" value="{{ cadastroCelularValor }}" />
+                <input type="text" name="cadastro-estado" placeholder="Estado" class="input-100-l input-97" ng-model="usuario.estado" />
             </div>
         </div>
         <div class="width-50-l width-640-px back-white">
             <div>
-                <input type="text" name="cadastro-whatsapp" placeholder="Whatsapp" class="input-100-l input-97-l" value="{{ cadastroWhatsappValor }}" />
+                <input type="text" name="cadastro-nascimento" placeholder="Data nascimento" class="input-100-l input-97-l" ng-model="usuario.nascimento" />
+            </div>
+            <div>
+                <input type="text" name="cadastro-email" placeholder="Email" class="input-100-l input-97-l" ng-model="usuario.email" />
+            </div>
+        </div>
+        <div class="width-50-l width-640-px back-white">
+            <div>
+                <input type="text" name="cadastro-telefone" placeholder="Telefone" class="input-100-l input-97" ng-model="usuario.telefone" />
+            </div>
+            <div>
+                <input type="text" name="cadastro-celular" placeholder="Celular" class="input-100-l input-97" ng-model="usuario.celular" />
+            </div>
+        </div>
+        <div class="width-50-l width-640-px back-white">
+            <div>
+                <input type="text" name="cadastro-whatsapp" placeholder="Whatsapp" class="input-100-l input-97-l" ng-model="usuario.whatsapp" />
             </div>
         </div>
         <div class="width-50-l width-640-px back-white">
@@ -63,7 +63,7 @@
                     <section title=".squaredFour">
                         <!-- .squaredFour -->
                         <div class="squaredFour">
-                            <input type="checkbox" value="1" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor1" />
+                            <input type="checkbox" value="1" name="cadastro-receber-informacao" ng-model="usuario.noticiaTelefone" />
                             <label for="squaredFour">Telefone</label>
                         </div>
                         <!-- end .squaredFour -->
@@ -73,7 +73,7 @@
                     <section title=".squaredFour">
                         <!-- .squaredFour -->
                         <div class="squaredFour">
-                            <input type="checkbox" value="2" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor2" />
+                            <input type="checkbox" value="2" name="cadastro-receber-informacao" ng-model="usuario.noticiaSms" />
                             <label for="squaredFour">SMS</label>
                         </div>
                         <!-- end .squaredFour -->
@@ -83,7 +83,7 @@
                     <section title=".squaredFour">
                         <!-- .squaredFour -->
                         <div class="squaredFour">
-                            <input type="checkbox" value="3" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor3" />
+                            <input type="checkbox" value="3" name="cadastro-receber-informacao" ng-model="usuario.noticiaWhatsapp" />
                             <label for="squaredFour">WhatsApp</label>
                         </div>
                         <!-- end .squaredFour -->
@@ -93,7 +93,7 @@
                     <section title=".squaredFour">
                         <!-- .squaredFour -->
                         <div class="squaredFour">
-                            <input type="checkbox" value="4" id="squaredFour" name="cadastro-receber-informacao" ng-model="cadastroReceberInformacaoValor4" />
+                            <input type="checkbox" value="4" name="cadastro-receber-informacao" ng-model="usuario.noticiaEmail" />
                             <label for="squaredFour">Email</label>
                         </div>
                         <!-- end .squaredFour -->
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="btn-novo-cadastro float-l btn-back-color" ng-click="historicoFormulario()">
+        <div class="btn-novo-cadastro float-l btn-back-color" ng-click="historicoFormulario(usuario)">
             <div class="btn-formulario">Histórico clínico</div>
         </div>
     </div>

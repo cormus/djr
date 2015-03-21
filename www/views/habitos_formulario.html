@@ -21,7 +21,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="habitos-filtro" id="squaredFour" name="check" checked />
+                          <input type="radio" value="1" name="habitos-filtro" ng-model="habito.filtro"/>
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -31,7 +31,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="habitos-filtro" id="squaredFour" name="check"  />
+                          <input type="radio" value="0" name="habitos-filtro" ng-model="habito.filtro"  />
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -50,7 +50,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="habitos-cosmeticos" id="squaredFour" name="check" checked />
+                              <input type="radio" value="1" name="habitos-cosmeticos" ng-model="habito.cosmetico" />
                               <label for="squaredFour">Sim</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -60,7 +60,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="habitos-cosmeticos" id="squaredFour" name="check"  />
+                              <input type="radio" value="0" name="habitos-cosmeticos" ng-model="habito.cosmetico" />
                               <label for="squaredFour">Não</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -72,14 +72,14 @@
         
         <div class="width-100-l back-white padding-bottom">
                 <div class="width-50-l width-640-px">
-                    <h1 class="texto-int-form">Você se expoe ao sol diariamente? </h1>
+                    <h1 class="texto-int-form">Você se expõe ao sol diariamente? </h1>
                 </div>
                 <div class="width-50-l width-640-px ">
                     <div class="width-50-l ">
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="habitos-sol" id="squaredFour" name="check" checked />
+                              <input type="radio" value="1" name="habitos-sol" ng-model="habito.sol"/>
                               <label for="squaredFour">Sim</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -89,7 +89,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="habitos-sol" id="squaredFour" name="check"  />
+                              <input type="radio" value="0" name="habitos-sol" ng-model="habito.sol"/>
                               <label for="squaredFour">Não</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -107,7 +107,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="habitos-tabagismo" id="squaredFour" name="check" checked />
+                              <input type="radio" value="1" name="habitos-tabagismo" ng-model="habito.tabagismo"/>
                               <label for="squaredFour">Sim</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -117,7 +117,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="habitos-tabagismo" id="squaredFour" name="check"  />
+                              <input type="radio" value="0" name="habitos-tabagismo" ng-model="habito.tabagismo"/>
                               <label for="squaredFour">Não</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -135,7 +135,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="habitos-tratamento" id="squaredFour" name="check" checked />
+                          <input type="radio" value="1" name="habitos-tratamento" ng-model="habito.tratamento"/>
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -145,7 +145,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="habitos-tratamento" id="squaredFour" name="check"  />
+                          <input type="radio" value="0" name="habitos-tratamento" ng-model="habito.tratamento"/>
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -153,12 +153,14 @@
                 </div>
                 
                 <div class="width-50-l width-768-100l">
-                    <div><input type="text" name="habitos-tratamento-quais"      placeholder="Quais?" class="input-100-l input-97"/></div>
+                    <div  ng-show="habito.tratamento">
+                        <input type="text" name="habitos-tratamento-quais" placeholder="Quais?" class="input-100-l input-97" ng-model="habito.tratamentoValor"/>
+                    </div>
                 </div>
 			</div>
 		</div>
         
-		<div class="btn-novo-cadastro float-l btn-back-color" ng-click="tratamentosFormulario()">
+		<div class="btn-novo-cadastro float-l btn-back-color" ng-click="tratamentosFormulario(habito)">
             <div class="btn-formulario">Tratamentos</div>
 		</div>
 	</div>

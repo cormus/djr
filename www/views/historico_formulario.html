@@ -21,7 +21,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="1" id="squaredFour" name="historico-medicamento" ng-model="historicoMedicamentoValor" />
+                          <input type="radio" value="1" name="historico-medicamento" ng-model="historico.medicamento" />
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -31,7 +31,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="0" id="squaredFour" name="historico-medicamento" ng-model="historicoMedicamentoValor" />
+                          <input type="radio" value="0" name="historico-medicamento" ng-model="historico.medicamento"/>
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -39,7 +39,9 @@
                 </div>
                 
                 <div class="width-50-l  width-768-100l">
-                    <div><input type="text" name="historico-medicamento-tipo"  placeholder="Qual?" class="input-100-l input-97" value="{{ historicoMedicamentoTipoValor }}"/></div>
+                    <div ng-show="historico.medicamento">
+                        <input type="text" name="historico-medicamento-tipo"  placeholder="Qual?" class="input-100-l input-97" ng-model="historico.medicamentoValor"/>
+                    </div>
                 </div>
 			</div>
 		</div>
@@ -53,7 +55,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="1" id="squaredFour" name="historico-alergia" ng-model="historicoAlergiaValor" />
+                          <input type="radio" value="1" name="historico-alergia" ng-model="historico.alergia" />
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -63,7 +65,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="0" id="squaredFour" name="historico-alergia" ng-model="historicoAlergiaValor" />
+                          <input type="radio" value="0" name="historico-alergia" ng-model="historico.alergia" />
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -71,7 +73,9 @@
                 </div>
                 
                 <div class="width-50-l width-768-100l">
-                    <div><input type="text" name="historico-alergia-tipo"      placeholder="Quais?" class="input-100-l input-97" value="{{ historicoAlergiaTipoValor }}"/></div>
+                    <div ng-show="historico.alergia">
+                        <input type="text" name="historico-alergia-tipo" placeholder="Quais?" class="input-100-l input-97" ng-model="historico.alergiaValor"/>
+                    </div>
                 </div>
 			</div>
 		</div>
@@ -85,7 +89,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="1" id="squaredFour" name="historico-cardiaco" ng-model="historicoCardiacoValor" />
+                          <input type="radio" value="1" name="historico-cardiaco" ng-model="historico.cardiaco" />
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -95,7 +99,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="0" id="squaredFour" name="historico-cardiaco" ng-model="historicoCardiacoValor" />
+                          <input type="radio" value="0" name="historico-cardiaco" ng-model="historico.cardiaco" />
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -103,7 +107,9 @@
                 </div>
                 
                 <div class="width-50-l width-768-100l">
-                    <div><input type="text" name="historico-cardiaco-tipo"      placeholder="Quais?" class="input-100-l input-97" value="{{ historicoCardiacoTipoValor }}"/></div>
+                    <div ng-show="historico.cardiaco">
+                        <input type="text" name="historico-cardiaco-tipo" placeholder="Quais?" class="input-100-l input-97" ng-model="historico.cardiacoValor"/>
+                        </div>
                 </div>
 			</div>
 		</div>
@@ -117,7 +123,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="1" id="squaredFour" name="historico-hormonais" ng-model="historicoHormonaisValor" />
+                          <input type="radio" value="1" name="historico-hormonais" ng-model="historico.hormonais" />
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -127,7 +133,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="0" id="squaredFour" name="historico-hormonais" ng-model="historicoHormonaisValor" />
+                          <input type="radio" value="0" name="historico-hormonais" ng-model="historico.hormonais" />
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -135,7 +141,9 @@
                 </div>
                 
                 <div class="width-50-l width-768-100l">
-                    <div><input type="text" name="historico-hormonais-tipo"      placeholder="Quais?" class="input-100-l input-97" value="{{ historicoHormonaisTipoValor }}"/></div>
+                    <div ng-show="historico.hormonais">
+                        <input type="text" name="historico-hormonais-tipo" placeholder="Quais?" class="input-100-l input-97" ng-model="historico.hormonaisValor"/>
+                    </div>
                 </div>
 			</div>
 		</div>
@@ -150,7 +158,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="1" id="squaredFour" name="historico-tratamento" ng-model="historicoTratamentoValor" />
+                          <input type="radio" value="1" name="historico-tratamento" ng-model="historico.tratamento" />
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -160,7 +168,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="0" id="squaredFour" name="historico-tratamento" ng-model="historicoTratamentoValor" />
+                          <input type="radio" value="0" name="historico-tratamento" ng-model="historico.tratamento" />
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -178,7 +186,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="1" id="squaredFour" name="historico-hipertensao" ng-model="historicoHipertensaoValor" />
+                          <input type="radio" value="1" name="historico-hipertensao" ng-model="historico.hipertensao" />
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -188,7 +196,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="0" id="squaredFour" name="historico-hipertensao" ng-model="historicoHipertensaoValor" />
+                          <input type="radio" value="0" name="historico-hipertensao" ng-model="historico.hipertensao" />
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -206,7 +214,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="1" id="squaredFour" name="historico-diabetico" ng-model="historicoDiabeticoValor" />
+                          <input type="radio" value="1" name="historico-diabetico" ng-model="historico.diabetico" />
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -216,7 +224,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="0" id="squaredFour" name="historico-diabetico" ng-model="historicoDiabeticoValor" />
+                          <input type="radio" value="0" name="historico-diabetico" ng-model="historico.diabetico" />
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -232,12 +240,12 @@
 			</div>
 			<div class="width-50-l width-640-px ">
                 <div class="width-100-l ">
-                    <textarea name="historico-clinico"  class="textarea-form" placeholder="Outras informações">{{ historicoClinicoValor }}</textarea>
+                    <textarea name="historico-clinico"  class="textarea-form" placeholder="Outras informações" ng-model="historico.clinico"></textarea>
                 </div>
 			</div>
 		</div>
         
-		<div class="btn-novo-cadastro float-l btn-back-color" ng-click="habitosFormulario()">
+		<div class="btn-novo-cadastro float-l btn-back-color" ng-click="habitosFormulario(historico)">
             <div class="btn-formulario">Hábitos</div>
 		</div>
 	</div>

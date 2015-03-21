@@ -20,7 +20,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="depilacao-laser" id="squaredFour" name="check" checked />
+                              <input type="radio" value="1" name="depilacao-laser" ng-model="tratamento.depilacao" />
                               <label for="squaredFour">Sim</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -30,7 +30,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="depilacao-laser" id="squaredFour" name="check"  />
+                              <input type="radio" value="0" name="depilacao-laser" ng-model="tratamento.depilacao" />
                               <label for="squaredFour">Não</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -48,7 +48,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="toxina" id="squaredFour" name="check" checked />
+                              <input type="radio" value="1" name="toxina" ng-model="tratamento.toxina"/>
                               <label for="squaredFour">Sim</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -58,7 +58,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="toxina" id="squaredFour" name="check"  />
+                              <input type="radio" value="0" name="toxina"  ng-model="tratamento.toxina"/>
                               <label for="squaredFour">Não</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -77,7 +77,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="tratamento-preenchimento" id="squaredFour" name="check" checked />
+                              <input type="radio" value="1" name="tratamento-preenchimento" ng-model="tratamento.preenchimento"/>
                               <label for="squaredFour">Sim</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -87,7 +87,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="tratamento-preenchimento" id="squaredFour" name="check"  />
+                              <input type="radio" value="0" name="tratamento-preenchimento"  ng-model="tratamento.preenchimento"/>
                               <label for="squaredFour">Não</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -106,7 +106,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="rejuvenescimento" id="squaredFour" name="check" checked />
+                              <input type="radio" value="1" name="rejuvenescimento" ng-model="tratamento.rejuvenescimento"/>
                               <label for="squaredFour">Sim</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -116,7 +116,7 @@
                         <section title=".squaredFour">
                         <!-- .squaredFour -->
                             <div class="squaredFour">
-                              <input type="checkbox" value="rejuvenescimento" id="squaredFour" name="check"  />
+                              <input type="radio" value="0" name="rejuvenescimento" ng-model="tratamento.rejuvenescimento" />
                               <label for="squaredFour">Não</label>
                             </div>
                         <!-- end .squaredFour -->
@@ -138,7 +138,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="tratamento-estetico" id="squaredFour" name="check" checked />
+                          <input type="radio" value="1" name="tratamento-estetico" ng-model="tratamento.estetico"/>
                           <label for="squaredFour">Facial</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -148,7 +148,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="tratamento-estetico" id="squaredFour" name="check"  />
+                          <input type="radio" value="2" name="tratamento-estetico"  ng-model="tratamento.estetico"/>
                           <label for="squaredFour">Corporal</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -158,7 +158,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="checkbox" value="tratamento-estetico" id="squaredFour" name="check"  />
+                          <input type="radio" value="3" name="tratamento-estetico"  ng-model="tratamento.estetico"/>
                           <label for="squaredFour">Nenhum</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -169,7 +169,7 @@
 		</div>
         
         
-        <div class="btn-novo-cadastro float-l btn-back-color" ng-click="tratamentosLista()">
+        <div class="btn-novo-cadastro float-l btn-back-color" ng-click="tratamentosLista(tratamento)">
                 <div class="btn-formulario">Ver lista de Tratamentos</div>
         </div>
     </div>

@@ -1,55 +1,68 @@
+var usuario = {};
+var historico = {};
+var habito = {};
+var tratamento = {};
 angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootScope, $location){
 	
 	 //fecha o snap
     appClass.snap.close();
     
-    $rootScope.cadastroShow = false;
-    $rootScope.cadastroShow = false;
-    $rootScope.historicoShow = false;
-    $rootScope.habitosShow = false;
-    $rootScope.tratamentosShow = false;
-    $rootScope.tratamentosListaShow = false;
+    $rootScope.page = {};
+    $rootScope.page.cadastro = false;
+    $rootScope.page.cadastro = false;
+    $rootScope.page.historico = false;
+    $rootScope.page.habitos = false;
+    $rootScope.page.tratamentos = false;
+    $rootScope.page.tratamentosLista = false;
 	
 	//função apra ir para a opagina de novo cadastro
 	$rootScope.novoCadastro = function()
 	{
-        $rootScope.cadastroShow = true;
+        $rootScope.page.cadastro= true;
         setTimeout(function(){
             appClass.myScroll.refresh();
             appClass.myScroll.scrollToElement('#cadastro-formulario');
         }, 200);
 	}
     
-    $rootScope.historicoFormulario = function()
+    $rootScope.usuario = usuario;
+    $rootScope.historicoFormulario = function(data)
 	{
-        $rootScope.historicoShow = true;
+        usuario = data;
+        $rootScope.page.historico = true;
         setTimeout(function(){
             appClass.myScroll.refresh();
             appClass.myScroll.scrollToElement('#historico-formulario');
         }, 200);
     }
     
-    $rootScope.habitosFormulario = function()
+    $rootScope.historico = historico;
+    $rootScope.habitosFormulario = function(data)
 	{
-		 $rootScope.habitosShow = true;
+         historico = data;
+		 $rootScope.page.habitos = true;
          setTimeout(function(){
             appClass.myScroll.refresh();
             appClass.myScroll.scrollToElement('#habitos-formulario');
         }, 200);
 	}
     
-    $rootScope.tratamentosFormulario = function()
+    $rootScope.habito = habito;
+    $rootScope.tratamentosFormulario = function(data)
 	{
-		 $rootScope.tratamentosShow = true;
+         habito = data;
+		 $rootScope.page.tratamentos = true;
          setTimeout(function(){
             appClass.myScroll.refresh();
             appClass.myScroll.scrollToElement('#tratamentos-formulario');
         }, 200);
 	}
     
-	$rootScope.tratamentosLista = function()
+    $rootScope.tratamento = tratamento;
+	$rootScope.tratamentosLista = function(data)
 	{
-		$rootScope.tratamentosListaShow = true;
+        tratamento = data;
+		$rootScope.page.tratamentosLista = true;
         setTimeout(function(){
             appClass.myScroll.refresh();
             appClass.myScroll.scrollToElement('#tratamentos-lista');
