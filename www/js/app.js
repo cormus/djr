@@ -46,7 +46,7 @@ function App() {
         
         obj.initIScroll = function()
         {
-            var myScroll = new IScroll('.wrapper', { mouseWheel: true });
+            obj.myScroll = new IScroll('.wrapper', { mouseWheel: true });
             document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
         }
     }

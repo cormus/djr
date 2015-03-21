@@ -1,18 +1,65 @@
-angularConfig.controller('HomeCtrl', function($rootScope, $location){
+angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootScope, $location){
 	
 	 //fecha o snap
     appClass.snap.close();
+    
+    $rootScope.cadastroShow = false;
+    $rootScope.cadastroShow = false;
+    $rootScope.historicoShow = false;
+    $rootScope.habitosShow = false;
+    $rootScope.tratamentosShow = false;
+    $rootScope.tratamentosListaShow = false;
 	
 	//função apra ir para a opagina de novo cadastro
 	$rootScope.novoCadastro = function()
 	{
-		$location.path('cadastro_formulario');
+        $rootScope.cadastroShow = true;
+        setTimeout(function(){
+            appClass.myScroll.refresh();
+            appClass.myScroll.scrollToElement('#cadastro-formulario');
+        }, 200);
 	}
-	
+    
+    $rootScope.historicoFormulario = function()
+	{
+        $rootScope.historicoShow = true;
+        setTimeout(function(){
+            appClass.myScroll.refresh();
+            appClass.myScroll.scrollToElement('#historico-formulario');
+        }, 200);
+    }
+    
+    $rootScope.habitosFormulario = function()
+	{
+		 $rootScope.habitosShow = true;
+         setTimeout(function(){
+            appClass.myScroll.refresh();
+            appClass.myScroll.scrollToElement('#habitos-formulario');
+        }, 200);
+	}
+    
+    $rootScope.tratamentosFormulario = function()
+	{
+		 $rootScope.tratamentosShow = true;
+         setTimeout(function(){
+            appClass.myScroll.refresh();
+            appClass.myScroll.scrollToElement('#tratamentos-formulario');
+        }, 200);
+	}
+    
+	$rootScope.tratamentosLista = function()
+	{
+		$rootScope.tratamentosListaShow = true;
+        setTimeout(function(){
+            appClass.myScroll.refresh();
+            appClass.myScroll.scrollToElement('#tratamentos-lista');
+        }, 200);
+	}
+    
     setTimeout(function(){
         appClass.initIScroll();
     }, 1000);
-});
+}]);
 
 var cadastroNomeValor       = '';
 var cadastroEnderecoValor   = '';

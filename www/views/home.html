@@ -1,15 +1,15 @@
 <!-- contato.html -->
 <div class="width-100-l text-c height-100">
-	<div class="width-100-l">
-        <img src="img/logo-home.png" alt="Clínica Dr. Josenildo Rodrigues" class='logo-home'/>
+    <div class="width-100-l">
+        <img src="img/logo-home.png" alt="Clínica Dr. Josenildo Rodrigues" class='logo-home' />
         <div class="btn-novo-cadastro float-l" ng-click="novoCadastro()">
             <div class="btn-formulario">Novo Cadastro</div>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
-<div ng-include="'views/cadastro_formulario.html'"></div>
-<div ng-include="'views/historico_formulario.html'"></div>
-<div ng-include="'views/habitos_formulario.html'"></div>
-<div ng-include="'views/tratamentos_formulario.html'"></div>
-<div ng-include="'views/tratamentos_lista.html'"></div>
+<div ng-include="'views/cadastro_formulario.html'" ng-show="cadastroShow"></div>
+<div ng-include="'views/historico_formulario.html'" ng-show="historicoShow"></div>
+<div ng-include="'views/habitos_formulario.html'" ng-show="habitosShow"></div>
+<div ng-include="'views/tratamentos_formulario.html'" ng-show="tratamentosShow"></div>
+<div ng-include="'views/tratamentos_lista.html'" ng-show="tratamentosListaShow"></div>

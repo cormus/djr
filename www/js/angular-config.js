@@ -33,14 +33,3 @@ angularConfig.config(function($routeProvider, $locationProvider)
    .otherwise ({ redirectTo: '/' });
     
 });
-
-angularConfig.run(function($rootScope, $location) {
-    //$rootScope.$on("$routeChangeSuccess", function(event, next, current){
-    //$rootScope.$on("$routeChangeStart", function(event, next, current){
-    //$rootScope.$on("$locationChangeStart", function(event, next, current){
-    //$rootScope.$on("$routeChangeStart", function(event, next, current){
-            //$rootScope.voltar = ' aaaaa';
-            //if($rootScope.voltar == undefined)
-                //alert('undefinedaaa');
-   //});
-});
