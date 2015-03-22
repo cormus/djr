@@ -135,7 +135,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="1" name="habitos-tratamento" ng-model="habito.tratamento"/>
+                          <input type="radio" value="1" name="habitos-tratamento" ng-model="habito.tratamento_anterior"/>
                           <label for="squaredFour">Sim</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -145,7 +145,7 @@
                     <section title=".squaredFour">
                     <!-- .squaredFour -->
                         <div class="squaredFour">
-                          <input type="radio" value="0" name="habitos-tratamento" ng-model="habito.tratamento"/>
+                          <input type="radio" value="0" name="habitos-tratamento" ng-model="habito.tratamento_anterior"/>
                           <label for="squaredFour">Não</label>
                         </div>
                     <!-- end .squaredFour -->
@@ -154,7 +154,7 @@
                 
                 <div class="width-50-l width-768-100l">
                     <div  ng-show="habito.tratamento">
-                        <input type="text" name="habitos-tratamento-quais" placeholder="Quais?" class="input-100-l input-97" ng-model="habito.tratamentoValor"/>
+                        <input type="text" name="habitos-tratamento-quais" placeholder="Quais?" class="input-100-l input-97" ng-model="habito.tratamento_anterior_valor"/>
                     </div>
                 </div>
 			</div>

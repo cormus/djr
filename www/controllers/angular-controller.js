@@ -69,6 +69,19 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
         }, 200);
 	}
     
+    $rootScope.cadastrar = function()
+	{
+        //http://localhost/htdocs/djr/adm/public/cadastros
+        var ajax = new Ajax();
+        ajax.post(
+            'http://localhost/htdocs/djr/adm/public/ajax/cadastro',
+            usuario,
+            function(data){
+                alert(data);
+            }
+        );
+	}
+    
     setTimeout(function(){
         appClass.initIScroll();
     }, 1000);
