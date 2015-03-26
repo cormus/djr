@@ -256,6 +256,12 @@ label {
         background: #f6f7f8;
         border-bottom: none;
     }
+.box-branco-ativa {
+  background: #FFF;
+  margin-bottom: 1.5%;
+  float: left;
+  width: 100%;
+}
 #conteudo_tratamentos .conteudos_ {
     display: none;
     text-align: justify;

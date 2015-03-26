@@ -75,11 +75,13 @@ function abre(valor) {
         $('#' + aberta).animate({
             height: 'toggle'
         });
+        $('.lista-tratamentos .back_branco_'+valor).addClass('box-branco-ativa');
         aberta = valor;
     } else {
         $('#' + aberta).animate({
             height: 'toggle'
         });
+        $('.lista-tratamentos .back_branco_'+valor).removeClass('box-branco-ativa');
         aberta = -1;
     }
 
