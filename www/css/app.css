@@ -244,6 +244,8 @@ label {
     line-height: 20px;
     width: 100%;
     text-align: center;
+    margin-bottom: 1.5%;
+    margin-top: 1.5%;
 }
 .lista-tratamentos {
     width: 100%;
@@ -262,8 +264,8 @@ label {
     color: #000;
     font-size: 12px;
     text-align: justify;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
 }
 .nome-tratamento {
   width: 100%;    
