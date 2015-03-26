@@ -237,26 +237,51 @@ label {
     float: left;
     padding-top: 1%;
     display: none;
-    background: #f6f7f8;    
+    margin-top: 0.5%;
+    background: #f6f7f8;
 }
-.lista_tratamentos {
+.titulo_conteudo_tratamento {
+    line-height: 20px;
+    width: 100%;
+    text-align: center;
+}
+.lista-tratamentos {
     width: 100%;
     float: left;
 }
     .lista-tratamentos li {
-        margin-top: 15px;
+        margin-top: 0px;
+        background: #f6f7f8;
+        border-bottom: none;
     }
-.conteudos_ {
+#conteudo_tratamentos .conteudos_ {
     display: none;
     text-align: justify;
     width: 80%;
     margin: 0 auto;
+    color: #000;
+    font-size: 12px;
+    text-align: justify;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 .nome-tratamento {
+  width: 100%;    
   text-decoration: none;
   color: black;
   font-size: 13px;
+  margin: 0 auto;
 }
+.info-tratamento {
+  border: 1px solid red;
+  width: 100%;    
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  margin: 0 auto;
+}
+
+/*Medias Queries*/
 @media (max-width: 1024px)
 {
     .logo-home{
