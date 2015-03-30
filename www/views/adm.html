@@ -18,10 +18,11 @@
             <div class="width-25-l"><span class=""><b>Status</b></span></div>
         </div>
         <div class="width-100-l cadastro" ng-repeat="row in rows">
-            <div class="width-25-l">Alex Ribeiro de Lima</div>
+            <div class="width-25-l">{{ row.values.usuario.nome }}</div>
             <div class="width-25-l">15/03/2015</div>
             <div class="width-25-l">&nbsp;</div>
-            <div class="width-25-l"><span class="">Enviar</span></div>
+            <div class="width-25-l" ng-if="row.status"><span class="">Enviado</span></div>
+            <div class="width-25-l" ng-if="!row.status"><span class="">Enviar</span></div>
         </div>
 	</div>
 </div>

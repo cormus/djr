@@ -6,6 +6,11 @@
 function Ajax()
 {
     var obj = this;
+	
+	function errorCallback()
+	{
+		
+	}
     
     obj.x = function() {
         if (typeof XMLHttpRequest !== 'undefined') {
@@ -18,7 +23,6 @@ function Ajax()
             "MSXML2.XmlHttp.2.0",  
             "Microsoft.XmlHttp"
         ];
-
         var xhr;
         for(var i = 0; i < versions.length; i++) {  
             try {  

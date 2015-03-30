@@ -19,6 +19,7 @@ function deleteTable()
 
 //verifica se a tabela existe
 db.transaction(function(tx){
+	
 	tx.executeSql("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'djr_cadastros'", [], function(tx, results){
 		 //se a tabela não existir ela é criada
 		 if(results.rows.length == 0)
