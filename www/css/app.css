@@ -343,3 +343,10 @@ label {
         display: none;
     }
 }
+
+.lista-cadastros .cadastro
+{
+    background: #f6f7f8;
+    padding: 10px 0;
+    margin: 5px 0;
+}

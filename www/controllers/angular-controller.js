@@ -4,6 +4,10 @@ var habito = {};
 var tratamento = {};
 angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootScope, $location){
 	
+	appClass = new App();
+	appClass.initialize();
+	appClass.initIScroll();
+		
 	 //fecha o snap
     appClass.snap.close();
     
@@ -71,21 +75,70 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
     
     $rootScope.cadastrar = function()
 	{
-        //http://localhost/htdocs/djr/adm/public/cadastros
-        var ajax = new Ajax();
-        ajax.post(
-            'http://localhost/htdocs/djr/adm/public/ajax/cadastro',
-            usuario,
-            function(data){
-                alert(data);
-            }
-        );
+        var dataValues = {
+            usuario:usuario,
+            historico:historico,
+            habito:habito,
+            tratamento:tratamento
+        };
+        
+        alert(JSON.stringify(dataValues));
+        
+        //id INTEGER PRIMARY KEY ASC, status INTEGER, data
+        tx.executeSql("INSERT INTO  djr_cadastros(status, data) VALUES (0, ?)", [dataValues], function(tx, results){
+             //se a tabela não existir ela é criada
+             alert(results);
+        });
+        
+        enviarDados(dataValues);
 	}
     
     setTimeout(function(){
         appClass.initIScroll();
     }, 1000);
 }]);
+
+
+function enviarDados(dataValues)
+{
+    //http://localhost/htdocs/djr/adm/public/cadastros
+    var ajax = new Ajax();
+    ajax.post(
+        'http://localhost/htdocs/djr/adm/public/ajax/cadastro',
+        dataValues,
+        function(data){
+            alert(data);
+        }
+    );
+}
+
+
+	
+angularConfig.controller('AdmCtrl', function($rootScope, $location){
+    
+     tx.executeSql("SELECT * FROM djr_cadastros", [], function(tx, results){
+         //se a tabela não existir ela é criada
+         if(results.rows.length)
+         {
+            $rootScope.rows = results.rows;
+         }
+         else
+         {
+             $rootScope.rows = [];
+         }
+    });
+
+    appClass.myScroll.refresh();
+    
+    //fecha o snap
+    appClass.snap.close();
+    //coloca uma classe se ativado no link do menu
+    $rootScope.activetab = $location.path();
+});
+
+
+
+/*
 
 var cadastroNomeValor       = '';
 var cadastroEnderecoValor   = '';
@@ -328,4 +381,6 @@ angularConfig.controller('TratamentosListaCtrl', function($rootScope, $location)
     appClass.snap.close();
     //coloca uma classe se ativado no link do menu
     $rootScope.activetab = $location.path();
-}); 
+});
+
+*/

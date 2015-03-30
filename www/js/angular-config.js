@@ -29,6 +29,10 @@ angularConfig.config(function($routeProvider, $locationProvider)
       templateUrl : 'views/tratamentos_lista.html',
       controller  : 'TratamentosListaCtrl',
    })
+   .when('/adm', {
+      templateUrl : 'views/adm.html',
+      controller  : 'AdmCtrl',
+   })
    // caso não seja nenhum desses, redirecione para a rota '/'
    .otherwise ({ redirectTo: '/' });
     
