@@ -119,6 +119,63 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 				return false;
 			}
 		}
+		
+		if(!historico.alergia)
+		{
+			alert('Informe se você é alérgico');
+			return false;
+		}
+		else if(historico.alergia == 1)
+		{
+			if(!historico.alergia_valor){
+				alert('Informe informe qual o tipo de alergia');
+				return false;
+			}
+		}
+		
+		if(!historico.cardiaco)
+		{
+			alert('Informe se você é cardiáco');
+			return false;
+		}
+		else if(historico.cardiaco == 1)
+		{
+			if(!historico.cardiaco_valor){
+				alert('Informe qual problema cardiáco');
+				return false;
+			}
+		}
+		
+		if(!historico.hormonais)
+		{
+			alert('Informe se você tem problemas hormonais');
+			return false;
+		}
+		else if(historico.hormonais == 1)
+		{
+			if(!historico.hormonais_valor){
+				alert('Informe quais os problemas hormonais');
+				return false;
+			}
+		}
+		
+		if(!historico.tratamento_atual)
+		{
+			alert('Informe se você esta em tratamento médico');
+			return false;
+		}
+		
+		if(!historico.hipertensao)
+		{
+			alert('Informe se você tem hipertensão');
+			return false;
+		}
+		
+		if(!historico.diabetico)
+		{
+			alert('Informe se você é diabético');
+			return false;
+		}
 		*/
 		
 		$rootScope.page.habitos = true;
@@ -131,7 +188,46 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
     $rootScope.habito = habito;
     $rootScope.tratamentosFormulario = function(data)
 	{
-         habito = data;
+ 		habito = data;
+		
+		/*
+		if(!habito.filtro)
+		{
+			alert('Informe se você usa filtro solar');
+			return false;
+		}
+		
+		if(!habito.cosmetico)
+		{
+			alert('Informe se você faz uso de cosméticos');
+			return false;
+		}
+		
+		if(!habito.sol)
+		{
+			alert('Informe se você se expõe ao sol');
+			return false;
+		}
+		
+		if(!habito.tabagismo)
+		{
+			alert('Informe se você faz uso de cigarros');
+			return false;
+		}
+		
+		if(!habito.tratamento_anterior)
+		{
+			alert('Informe se você ja fez tratamentos estéticos');
+			return false;
+		}
+		else if(habito.tratamento_anterior == 1)
+		{
+			if(!habito.tratamento_anterior_valor){
+				alert('Informe quais tratamentos estéticos');
+				return false;
+			}
+		}
+		*/
 		 $rootScope.page.tratamentos = true;
          setTimeout(function(){
             appClass.myScroll.refresh();
@@ -143,6 +239,39 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 	$rootScope.tratamentosLista = function(data)
 	{
         tratamento = data;
+		
+		/*
+		if(!tratamento.depilacao)
+		{
+			alert('Informe se já fez depilação a Laser');
+			return false;
+		}
+		
+		if(!tratamento.toxina)
+		{
+			alert('Informe se gostaria de conhecer a toxina botulínica');
+			return false;
+		}
+		
+		if(!tratamento.preenchimento)
+		{
+			alert('Informe se realizou ou conhece o tratamento com preenchimento');
+			return false;
+		}
+		
+		if(!tratamento.rejuvenescimento)
+		{
+			alert('Informe se conhece nossas técnicas de rejuvenescimento facial a laser');
+			return false;
+		}
+		
+		if(!tratamento.estetico)
+		{
+			alert('Informe se gostaria de fazer tratamentos estéticos');
+			return false;
+		}
+		*/
+		
 		$rootScope.page.tratamentosLista = true;
         setTimeout(function(){
             appClass.myScroll.refresh();
