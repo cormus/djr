@@ -21,6 +21,20 @@
     width:100%;
     float: right;
 }
+.width-33
+{
+    width:33.32%;
+}
+.width-33-l
+{
+    width:33.32%;
+    float: left;
+}
+.width-33-r
+{
+    width:33.32%;
+    float: right;
+}
 .width-50
 {
     width:50%;
@@ -67,6 +81,22 @@
     width:80%;
     float: right;
 }
+
+.width-95
+{
+    width:95%;
+}
+.width-80-l
+{
+    width:95%;
+    float: left;
+}
+.width-95-r
+{
+    width:95%;
+    float: right;
+}
+
 .height-100
 {
     height:100%;

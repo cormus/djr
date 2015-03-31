@@ -43,7 +43,7 @@ function Ajax()
             }
             else
             {
-                errorCallback();
+                console.log('Erro de ajax');
             }
         };
         if (method == 'POST') {

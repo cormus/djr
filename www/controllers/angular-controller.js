@@ -12,12 +12,14 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
     appClass.snap.close();
     
     $rootScope.page = {};
-    $rootScope.page.cadastro = false;
-    $rootScope.page.cadastro = false;
-    $rootScope.page.historico = false;
-    $rootScope.page.habitos = false;
-    $rootScope.page.tratamentos = false;
+    $rootScope.page.cadastro 		 = false;
+    $rootScope.page.cadastro 		 = false;
+    $rootScope.page.historico 	     = false;
+    $rootScope.page.habitos 	     = false;
+    $rootScope.page.tratamentos 	 = false;
     $rootScope.page.tratamentosLista = false;
+	
+	$rootScope.dadosEnviados = false;
 	
 	//função apra ir para a opagina de novo cadastro
 	$rootScope.novoCadastro = function()
@@ -33,6 +35,65 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
     $rootScope.historicoFormulario = function(data)
 	{
         usuario = data;
+		
+		/*
+		if(!usuario.nome)
+		{
+			alert('Informe seu nome');
+			return false;
+		}
+		if(!usuario.endereco)
+		{
+			alert('Informe seu endereco');
+			return false;
+		}
+		if(!usuario.cep)
+		{
+			alert('Informe seu CEP');
+			return false;
+		}
+		if(!usuario.cidade)
+		{
+			alert('Informe sua cidade');
+			return false;
+		}
+		if(!usuario.bairro)
+		{
+			alert('Informe seu bairro');
+			return false;
+		}
+		if(!usuario.estado)
+		{
+			alert('Informe seu estado');
+			return false;
+		}
+		if(!usuario.nascimento)
+		{
+			alert('Informe sua data de nascimento');
+			return false;
+		}
+		if(!usuario.email)
+		{
+			alert('Informe seu email');
+			return false;
+		}
+		if(!usuario.telefone)
+		{
+			alert('Informe seu telefone');
+			return false;
+		}
+		if(!usuario.celular)
+		{
+			alert('Informe seu celular');
+			return false;
+		}
+		if(!usuario.whatsapp)
+		{
+			alert('Informe seu whatsapp');
+			return false;
+		}
+		*/
+		
         $rootScope.page.historico = true;
         setTimeout(function(){
             appClass.myScroll.refresh();
@@ -43,9 +104,25 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
     $rootScope.historico = historico;
     $rootScope.habitosFormulario = function(data)
 	{
-         historico = data;
-		 $rootScope.page.habitos = true;
-         setTimeout(function(){
+		historico = data;
+
+		/*
+		if(!historico.medicamento)
+		{
+			alert('Informe se está com algum medicamento em uso');
+			return false;
+		}
+		else if(historico.medicamento == 1)
+		{
+			if(!historico.medicamento_valor){
+				alert('Informe qual o medicamento');
+				return false;
+			}
+		}
+		*/
+		
+		$rootScope.page.habitos = true;
+        setTimeout(function(){
             appClass.myScroll.refresh();
             appClass.myScroll.scrollToElement('#habitos-formulario');
         }, 200);
@@ -88,7 +165,10 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 			 	//se a tabela não existir ela é criada
 				//alert(results.insertId);
 				//$rootScope.enviarDados(results.insertId);
-				$rootScope.enviarDados();
+				$rootScope.enviarDados(results.insertId);
+				$rootScope.dadosEnviados = true;
+				//aplica as mudanças
+				$rootScope.$apply();
 			});
 		}, errorCB);
 		//alert(JSON.stringify(dataValues));
@@ -96,11 +176,11 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 	}
 	
 	//$rootScope.enviarDados = function(id)
-	$rootScope.enviarDados = function()
+	$rootScope.enviarDados = function(id)
 	{
 		db.transaction(function(tx){
-			 //tx.executeSql("SELECT * FROM djr_cadastros WHERE id = ?", [id], function(tx, results){
-			 tx.executeSql("SELECT * FROM djr_cadastros WHERE status = 0", [id], function(tx, results){
+			 tx.executeSql("SELECT * FROM djr_cadastros WHERE id = ?", [id], function(tx, results){
+			 //tx.executeSql("SELECT * FROM djr_cadastros WHERE status = 0", [id], function(tx, results){
 				 
 			 	 //var row  = results.rows.item(0);
 				 var len = results.rows.length;
@@ -152,6 +232,10 @@ angularConfig.controller('AdmCtrl', function($rootScope, $location){
 				row.values = JSON.parse(row.data);
 				$rootScope.rows.push(row);
 			 }
+			 
+			 //aplica as mudanças
+			 $rootScope.$apply();
+			 appClass.myScroll.refresh();
 		});
 	}, errorCB);
 

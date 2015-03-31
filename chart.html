@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["bar"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2014 asdfhja sdjfhja shjdf ajs hdf', 1000, 400],
+          ['2015 asdfa aaa ak skd fkajs dfaksdf', 1170, 460],
+          ['2012015 asdfa aaa ak skd fkajs dfaksdf6', 660, 1120],
+          ['2017 2015 asdfa aaa ak skd fkajs dfaksdf', 1030, 540],
+          ['2017 2015 asdfa aaa ak skd fkajs dfaksdf', 1030, 540]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
