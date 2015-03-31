@@ -292,9 +292,9 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 		db.transaction(function(tx){
 			tx.executeSql("INSERT INTO  djr_cadastros(status, data) VALUES (0, ?)", [JSON.stringify(dataValues)], function(tx, results){
 			 	//se a tabela não existir ela é criada
-				//alert(results.insertId);
 				//$rootScope.enviarDados(results.insertId);
-				$rootScope.enviarDados(results.insertId);
+				$rootScope.enviarTodosDados();
+				
 				$rootScope.dadosEnviados = true;
 				//aplica as mudanças
 				$rootScope.$apply();
@@ -302,6 +302,21 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 		}, errorCB);
 		//alert(JSON.stringify(dataValues));
         //$rootScope.enviarDados(dataValues);
+	}
+	
+	//$rootScope.enviarDados = function(id)
+	$rootScope.enviarTodosDados = function()
+	{
+		db.transaction(function(tx){
+			 tx.executeSql("SELECT * FROM djr_cadastros WHERE status = ?", [0], function(tx, results){
+				 var len = results.rows.length;
+				 for(var i=0; i < len; i++)
+				 {
+					var row  = results.rows.item(i);
+					$rootScope.enviarDados(row.id);
+				 }
+			});
+		}, errorCB);
 	}
 	
 	//$rootScope.enviarDados = function(id)
