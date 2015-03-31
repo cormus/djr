@@ -300,8 +300,6 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 				$rootScope.$apply();
 			});
 		}, errorCB);
-		//alert(JSON.stringify(dataValues));
-        //$rootScope.enviarDados(dataValues);
 	}
 	
 	//$rootScope.enviarDados = function(id)
@@ -313,46 +311,8 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 				 for(var i=0; i < len; i++)
 				 {
 					var row  = results.rows.item(i);
-					$rootScope.enviarDados(row.id);
+					enviarDado(row.id);
 				 }
-			});
-		}, errorCB);
-	}
-	
-	//$rootScope.enviarDados = function(id)
-	$rootScope.enviarDados = function(id)
-	{
-		db.transaction(function(tx){
-			 tx.executeSql("SELECT * FROM djr_cadastros WHERE id = ?", [id], function(tx, results){
-			 //tx.executeSql("SELECT * FROM djr_cadastros WHERE status = 0", [id], function(tx, results){
-				 
-			 	 //var row  = results.rows.item(0);
-				 var len = results.rows.length;
-				 for(var i=0; i < len; i++)
-				 {
-					var row  = results.rows.item(i);
-					var ajax = new Ajax();
-					ajax.post(
-						'http://localhost/htdocs/djr/adm/public/ajax/cadastro',
-						JSON.parse(row.data),
-						function(data)
-						{
-							if(data)
-							{
-								updateCadastro(row.id);
-							}
-						}
-					);
-				 }
-			});
-		}, errorCB);
-	}
-	
-	function updateCadastro(id)
-	{
-		db.transaction(function(tx){
-			tx.executeSql("UPDATE djr_cadastros SET status = 1 WHERE id = ?", [id], function(tx, results){
-			 	
 			});
 		}, errorCB);
 	}
@@ -363,6 +323,34 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 	
 }]);
 
+
+function enviarDado(id)
+{
+	db.transaction(function(tx){
+		 tx.executeSql("SELECT * FROM djr_cadastros WHERE id = ?", [id], function(tx, results){
+			var row  = results.rows.item(0);
+			var ajax = new Ajax();
+			ajax.post(
+				'http://localhost/htdocs/djr/adm/public/ajax/cadastro',
+				JSON.parse(row.data),
+				function(data)
+				{
+					if(data)
+					{
+						updateCadastro(row.id);
+					}
+				}
+			);
+		});
+	}, errorCB);
+}
+
+function updateCadastro(id)
+{
+	db.transaction(function(tx){
+		tx.executeSql("UPDATE djr_cadastros SET status = 1 WHERE id = ?", [id], function(tx, results){ });
+	}, errorCB);
+}
 	
 angularConfig.controller('AdmCtrl', function($rootScope, $location){
     
@@ -382,6 +370,11 @@ angularConfig.controller('AdmCtrl', function($rootScope, $location){
 			 appClass.myScroll.refresh();
 		});
 	}, errorCB);
+	
+	$rootScope.enviarDado = function(id)
+	{	
+		enviarDado(id);
+	}
 
     appClass.myScroll.refresh();
     
