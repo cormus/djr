@@ -32,7 +32,7 @@ db.transaction(function(tx){
 function createTableCadastros()
 {
 	db.transaction(function(tx) {
-		tx.executeSql("CREATE TABLE IF NOT EXISTS djr_cadastros (id INTEGER PRIMARY KEY ASC, status INTEGER, data TEXT)");
+		tx.executeSql("CREATE TABLE IF NOT EXISTS djr_cadastros (id INTEGER PRIMARY KEY ASC, status INTEGER, data TEXT, date DATE)");
 		//tx.executeSql("INSERT INTO djr_cadastros (id, nome) VALUES (1,  ?)", ['dados']);
 	}, errorCB);
 }

@@ -7,7 +7,10 @@
 	</div>
     <div class="width-80 margin-auto">
         <div class="titulo-principal">
-            <h1 class="titulo-formularios">Lista de cadastros</h1>
+            <h1 class="titulo-formularios">
+            	Lista de cadastros
+				<span class="float-r" ng-click="carregarDados()" style="font-size: 11px; color: #FFF; background-color: #0B87B5; padding: 9px 12px; margin: -3px 11px 0 0;">Atualizar Lista</span>
+            </h1>
         </div>
     </div>
 	<div class="width-80 margin-auto lista-cadastros">
@@ -19,13 +22,13 @@
         </div>
         <div class="width-100-l cadastro" ng-repeat="row in rows">
             <div class="width-25-l">{{ row.values.usuario.nome }}&nbsp;</div>
-            <div class="width-25-l">15/03/2015</div>
+            <div class="width-25-l">{{ row.date }}</div>
             <div class="width-25-l">&nbsp;</div>
             <div class="width-25-l" ng-if="row.status">
             	<span class="" style="color:green">Enviado</span>
 			</div>
             <div class="width-25-l" ng-if="!row.status" ng-click="enviarDado(row.id)">
-            	<span class="" style="color:red">Clique para enviar</span>
+            	<span class="" style="color:red;  background-color: #21B50B; padding: 6px;">Clique para enviar</span>
 			</div>
         </div>
 		<div class="width-100-l">

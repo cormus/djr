@@ -2,6 +2,21 @@ var usuario = {};
 var historico = {};
 var habito = {};
 var tratamento = {};
+
+function checkConnection() {
+    var networkState = navigator.connection.type;
+    var states = {};
+    states[Connection.UNKNOWN]  = {status:'Unknown connection', connected: false};
+    states[Connection.ETHERNET] = {status:'Ethernet connection', connected: true};
+    states[Connection.WIFI]     = {status:'WiFi connection', connected: true};
+    states[Connection.CELL_2G]  = {status:'Cell 2G connection', connected: true};
+    states[Connection.CELL_3G]  = {status:'Cell 3G connection', connected: true};
+    states[Connection.CELL_4G]  = {status:'Cell 4G connection', connected: true};
+    states[Connection.CELL]     = {status:'Cell generic connection', connected: true};
+    states[Connection.NONE]     = {status:'No network connection', connected: false};
+    return states[networkState];
+}
+
 angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootScope, $location){
 	
 	appClass = new App();
@@ -24,7 +39,17 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 	//função apra ir para a opagina de novo cadastro
 	$rootScope.novoCadastro = function()
 	{
-        $rootScope.page.cadastro= true;
+		$rootScope.usuario = {};
+		$rootScope.historico = {};
+		$rootScope.habito = {};
+		$rootScope.tratamento = {};
+		
+        $rootScope.page.cadastro	     = true;
+		$rootScope.page.historico 	     = false;
+		$rootScope.page.habitos 	     = false;
+		$rootScope.page.tratamentos 	 = false;
+		$rootScope.page.tratamentosLista = false;
+		
         setTimeout(function(){
             appClass.myScroll.refresh();
             appClass.myScroll.scrollToElement('#cadastro-formulario');
@@ -290,11 +315,10 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
         
 		//id INTEGER PRIMARY KEY ASC, status INTEGER, data
 		db.transaction(function(tx){
-			tx.executeSql("INSERT INTO  djr_cadastros(status, data) VALUES (0, ?)", [JSON.stringify(dataValues)], function(tx, results){
-			 	//se a tabela não existir ela é criada
+			tx.executeSql("INSERT INTO  djr_cadastros(status, data, date) VALUES (0, ?, datetime ())", [JSON.stringify(dataValues)], function(tx, results){
+				//se a tabela não existir ela é criada
 				//$rootScope.enviarDados(results.insertId);
 				$rootScope.enviarTodosDados();
-				
 				$rootScope.dadosEnviados = true;
 				//aplica as mudanças
 				$rootScope.$apply();
@@ -326,23 +350,34 @@ angularConfig.controller('HomeCtrl', ['$rootScope', '$location', function($rootS
 
 function enviarDado(id)
 {
-	db.transaction(function(tx){
-		 tx.executeSql("SELECT * FROM djr_cadastros WHERE id = ?", [id], function(tx, results){
-			var row  = results.rows.item(0);
-			var ajax = new Ajax();
-			ajax.post(
-				'http://localhost/htdocs/djr/adm/public/ajax/cadastro',
-				JSON.parse(row.data),
-				function(data)
-				{
-					if(data)
+	var status = checkConnection();
+	if(status.connected)
+	{
+		db.transaction(function(tx){
+			 tx.executeSql("SELECT * FROM djr_cadastros WHERE id = ?", [id], function(tx, results){
+				var row  = results.rows.item(0);
+				var ajax = new Ajax();
+				ajax.post(
+					//'http://localhost/htdocs/djr/adm/public/ajax/cadastro',
+					//'http://www.cormus.com.br/djr/post.php',
+					'http://www.cormus.com.br/djr/adm/public/ajax/cadastro',
+					row,
+					function(data)
 					{
-						updateCadastro(row.id);
+						//alert(data);
+						if(data)
+						{
+							updateCadastro(row.id);
+						}
+						else
+						{
+							alert('Erro ao tentar enviar os dados, falha na conexão!');
+						}
 					}
-				}
-			);
-		});
-	}, errorCB);
+				);
+			});
+		}, errorCB);
+	}
 }
 
 function updateCadastro(id)
@@ -354,26 +389,57 @@ function updateCadastro(id)
 	
 angularConfig.controller('AdmCtrl', function($rootScope, $location){
     
-	db.transaction(function(tx){
-		 tx.executeSql("SELECT * FROM djr_cadastros", [], function(tx, results){
-			 $rootScope.rows = [];
-			 var len = results.rows.length;
-			 for(var i=0; i < len; i++)
-			 {
-				var row  = results.rows.item(i);
-				row.values = JSON.parse(row.data);
-				$rootScope.rows.push(row);
-			 }
-			 
-			 //aplica as mudanças
-			 $rootScope.$apply();
-			 appClass.myScroll.refresh();
-		});
-	}, errorCB);
+	var senha = prompt("Digite sua senha:");
+	
+	if(senha == 'djr')
+	{
+		carregarDados();
+	}
+	else
+	{
+		alert('Senha incorreta !');
+		//manda para a página de cadastro
+		window.location = '#';
+	}
+	function carregarDados()
+	{
+		db.transaction(function(tx){
+			 tx.executeSql("SELECT * FROM djr_cadastros", [], function(tx, results){
+				 $rootScope.rows = [];
+				 var len = results.rows.length;
+				 for(var i=0; i < len; i++)
+				 {
+					var row  = results.rows.item(i);
+					row.values = JSON.parse(row.data);
+					$rootScope.rows.push(row);
+				 }
+				 //aplica as mudanças
+				 $rootScope.$apply();
+				 appClass.myScroll.refresh();
+			});
+		}, errorCB);
+	}
 	
 	$rootScope.enviarDado = function(id)
 	{	
-		enviarDado(id);
+		var status = checkConnection();
+		if(status.connected)
+		{
+			enviarDado(id);
+			carregarDados();
+			setTimeout(function(){
+				carregarDados();
+			}, 1500);
+		}
+		else
+		{
+			alert('Sem conexão com a internet !');
+		}
+	}
+	
+	$rootScope.carregarDados = function()
+	{
+		carregarDados();
 	}
 
     appClass.myScroll.refresh();

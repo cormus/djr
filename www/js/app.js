@@ -84,5 +84,5 @@ function abre(valor) {
         $('.lista-tratamentos .back_branco_'+valor).removeClass('box-branco-ativa');
         aberta = -1;
     }
-
+	appClass.myScroll.refresh();
 }
